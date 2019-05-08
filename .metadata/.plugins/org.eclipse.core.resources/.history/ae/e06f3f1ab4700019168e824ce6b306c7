@@ -1,0 +1,42 @@
+package bridgeLabzDatastructure;
+
+import java.util.Arrays;
+
+public class PrimeNumbersAnagram {
+public static void main(String[] args) {
+	int capacity=20;
+	int primeAnagram[][]=new int[2][capacity];
+	int primeNumbers[]=new int[PrimeNumbers2D.length];  
+	PrimeNumbers2D.createPrimeNumberInArray(0,1000);
+	int index=-1;
+	for(int i=0;i<10;i++)
+	{
+		for(int j=0;j<PrimeNumbers2D.capacity;j++)
+		{
+			if(PrimeNumbers2D.prime[i][j]!=0)
+			     primeNumbers[++index]=PrimeNumbers2D.prime[i][j];
+		}
+	}
+	
+	for(int k=0;k<primeNumbers.length;k++)
+	{
+		for(int l=k+1;l<primeNumbers.length;l++)
+		{
+			if(isAnagram(k,l))
+			{
+				
+			}
+		}
+	}
+}
+
+private static boolean isAnagram(int k, int l) {
+	String s1=""+k;
+	String s2=""+l;
+	char ch1[]=s1.toCharArray();
+	char ch2[]=s2.toCharArray();
+	Arrays.sort(ch1);
+	Arrays.sort(ch2);
+	return String.valueOf(ch1).equals(String.valueOf(ch2));
+}
+}

@@ -1,0 +1,72 @@
+package bridgeLabzDatastructure;
+
+import java.util.Arrays;
+
+public class PrimeNumbersAnagram {
+	static int capacity;
+	static int primeAnagram[][];
+public static void main(String[] args) {
+	PrimeNumbers2D.createPrimeNumberInArray(0,1000); 
+	capacity=PrimeNumbers2D.primenum.length;
+	int primeAnagram2[][]=new int[2][capacity];
+	primeAnagram=primeAnagram2;
+	int a=0,b=0;
+	for(int k=0;k<PrimeNumbers2D.primenum.length;k++)
+	{
+		int count=0;
+		for(int l=k+1;l<PrimeNumbers2D.primenum.length;l++)
+		{
+			if(isAnagram(PrimeNumbers2D.primenum[k],PrimeNumbers2D.primenum[l])&&PrimeNumbers2D.primenum[k]!=0)
+			{
+				if(count==0)
+				{
+					primeAnagram[0][a]=PrimeNumbers2D.primenum[k];
+					a++;
+				}
+				primeAnagram[0][a]=PrimeNumbers2D.primenum[l];
+				PrimeNumbers2D.primenum[l]=0;
+				count++;
+				a++;
+			}
+		}
+		if(count>0)
+			continue;
+		else if(PrimeNumbers2D.primenum[k]!=0)
+		{
+			primeAnagram[1][b]=PrimeNumbers2D.primenum[k];
+			b++;
+		}
+		else
+			continue;
+	}
+	print();
+}
+
+private static void print() {
+	for(int k=0;k<2;k++)
+	{
+		if(k==0)
+		     System.out.println("Anagram prime :");
+		else
+			System.out.println("Not Anagram :");
+		
+		for(int l=0;l<PrimeNumbers2D.primenum.length;l++)
+		{
+			if(primeAnagram[k][l]!=0)
+			      System.out.print(primeAnagram[k][l]+" ");
+		}
+		System.out.println();
+	}
+	
+}
+
+public static boolean isAnagram(int k, int l) {
+	String s1=""+k;
+	String s2=""+l;
+	char ch1[]=s1.toCharArray();
+	char ch2[]=s2.toCharArray();
+	Arrays.sort(ch1);
+	Arrays.sort(ch2);
+	return String.valueOf(ch1).equals(String.valueOf(ch2));
+}
+}

@@ -1,0 +1,39 @@
+package bridgeLabzDatastructure;
+
+import java.util.Scanner;
+
+public class NumberOfBinarySearchTree {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter Number of nodes of binary tree :");
+	int n=sc.nextInt();
+	System.out.println(countBST(n));
+	System.out.println(countBT(n));
+	sc.close();
+}
+
+private static int countBST(int n) {
+	int G[]=new int[n+1];
+	G[0]=G[1]=1;
+	for(int i=2;i<=n;i++)
+	{
+		for(int j=0;j<i;j++)
+		{
+			G[i]+=G[j]*G[i-j-1];
+		}
+	}
+	return G[n];
+	
+}
+private static int countBT(int n)
+{
+	return countBST(n)*factorial(n);
+}
+
+private static int factorial(int n) {
+	int fact=1;
+	for(int i=2;i<=n;i++)
+		fact=fact*i;
+	return fact;
+}
+}

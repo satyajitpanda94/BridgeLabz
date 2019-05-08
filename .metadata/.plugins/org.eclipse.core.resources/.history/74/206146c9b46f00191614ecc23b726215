@@ -1,0 +1,223 @@
+package bridgelabz;
+
+public class HashMap {
+	public static void main(String[] args) {
+		HashMaping<Integer> hm=new HashMaping<>();
+		hm.put(77);
+		hm.put(44);
+		hm.put(25);
+		hm.put(66);
+		hm.put(32);
+		hm.put(70);
+		hm.put(6);
+		hm.put(45);
+		hm.put(36);
+		hm.put(21);
+		hm.put(88);
+		hm.put(37);
+		hm.put(90);
+		hm.put(5);
+		   
+		System.out.println(hm);
+		if(hm.search(66))
+			hm.remove(66);
+		else
+			hm.put(66);
+		System.out.println(hm);
+	}
+}
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class OrderedList {
+public static void main(String[] args) throws FileNotFoundException {
+	File f=new File("D:\\test1.txt");
+	Scanner sc=new Scanner(f);
+	String s=sc.nextLine()+",";
+	OrderedLinkedList<Integer> oll=new OrderedLinkedList<>();
+	int start=0,end=-1;
+	for(int i=0;i<s.length();i++) {
+		if(s.charAt(i)==',')
+		{
+			start=end+1;
+			end=i;
+			oll.add(Integer.parseInt(s.substring(start, end)));
+		}	     
+	}
+	oll.printList();
+	Scanner sca=new Scanner(System.in);
+	System.out.println("Enter Number :");
+	int num=sca.nextInt();
+	if(oll.checkNumber(num))
+		oll.remove(num);
+	else
+		oll.add(num);
+	oll.printList();
+	addlistToFile(oll);
+	System.out.println(oll.length);
+	sc.close();
+	sca.close();
+}
+
+private static void addlistToFile(OrderedLinkedList<Integer> oll) {
+	try {
+		FileWriter fw= new FileWriter("D:\\testWriteoll.txt");
+		int l=oll.length;
+		for(int i=0;i<l;i++)
+		{
+			fw.write(oll.get(i)+" ");
+		}
+		System.out.println("List is added to file.");
+		fw.close();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+	
+}
+
+class NodeMap<T,M>
+{
+	T key;
+	M value;
+	NodeMap<T,M> next;
+}
+
+class HashMap<T,M>
+{
+	NodeMap<T,M> slot[]=new NodeMap[11];
+	
+	public void put(T key,M value)
+	{
+		NodeMap<T,M> n=new NodeMap<>();
+		n.key=key;
+		OrderedLinkedList<T> ll=new OrderedLinkedList<>();
+		ll.add(value);
+		n.value=ll;
+		
+		
+	}
+}
+
+class NodeLinkedList<T>
+{
+	T data;
+	NodeLinkedList<T> next;
+}
+class OrderedLinkedList<T extends Comparable<T>>
+{
+	NodeLinkedList<T> head;
+	int length;
+	
+	public void add(T data)
+	{
+		NodeLinkedList<T> n=new NodeLinkedList<>();
+		n.data=data;
+		
+		if(length==0)
+		{
+			head=n;
+			length++;
+		}
+		else
+		{
+			NodeLinkedList<T> n1=head;
+			NodeLinkedList<T> pre=null;
+			int z=0;
+			for(int i=0;i<length;i++)
+			{
+				z=i;
+				if(data.compareTo(n1.data)<0)
+				{
+					break;
+				}
+				pre=n1;
+				n1=n1.next;
+			}
+			if(z==0)
+			{
+				NodeLinkedList<T> n2=head;
+				head=n;
+				head.next=n2;
+				length++;
+			}
+			else 
+			{
+				pre.next=n;
+				n.next=n1;
+				length++;
+			}
+		}
+		
+	}
+
+	public T get(int i) {
+		NodeLinkedList<T> n=head;
+		for(int j=0;j<i;j++)
+		{
+			n=n.next;
+		}
+		return n.data;
+	}
+
+	public void remove(T num) {
+		NodeLinkedList<T> n=head;
+		NodeLinkedList<T> pre=null;
+		int z=0;
+		for(int i=0;i<length;i++)
+		{
+			if(num.compareTo(n.data)==0)
+			{
+				z=i;
+				break;
+			}
+		    pre=n;
+		    n=n.next;
+		}
+		if(z==0)
+		{
+			head=head.next;
+			n=null;
+			length--;
+		}
+		else {
+			pre.next=n.next;
+			n=null;
+			length--;
+		}
+		
+	}
+
+	public boolean checkNumber(T num) {
+		NodeLinkedList<T> n=head;
+		for(int i=0;i<length;i++)
+		{
+			if(n.data.compareTo(num)==0)
+				return true;
+			n=n.next;
+		}
+		return false;
+	}
+
+	public void printList()
+	{
+		if(length==0)
+			System.out.println("List is empty.");
+		else
+		{
+			NodeLinkedList<T> n=head;
+			System.out.print("[ ");
+			while(n.next!=null)
+			{
+				System.out.print(n.data+", ");
+				n=n.next;
+			}
+			System.out.print(n.data+" ]\n");
+		}
+	}		
+}

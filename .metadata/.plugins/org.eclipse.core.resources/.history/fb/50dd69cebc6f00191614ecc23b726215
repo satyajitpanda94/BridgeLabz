@@ -1,0 +1,141 @@
+package bridgeLabzDatastructure;
+
+public class HashFunction {
+public static void main(String[] args) {
+	HashMap<Integer> hm=new HashMap<>();
+	hm.put(77);
+	hm.put(44);
+	hm.put(25);
+	hm.put(66);
+	hm.put(32);
+	hm.put(70);
+	hm.put(6);
+	hm.put(45);
+	hm.put(36);
+	hm.put(21);
+	hm.put(96);
+	hm.put(37);
+	hm.put(91);
+	hm.put(61);
+	if(hm.search(45))
+		System.out.println("Number is present.");
+	else
+		System.out.println("Not present");
+	System.out.println(hm);
+}
+}
+class NodeHashing<T>
+{
+	T data;
+	NodeHashing<T> next;
+}
+class HashMap<T extends Comparable<T>>
+{
+
+	@SuppressWarnings("unchecked")
+	private NodeHashing<T>[] slot=new NodeHashing[11];
+	public int size;
+	
+	public int hashFunction(T data)
+	{
+		return data.hashCode()%11;
+	}
+	
+	public void put(T data)
+	{
+		int index=hashFunction(data);
+		NodeHashing<T> n=new NodeHashing<>();
+		
+		n.data=data;
+		if(slot[index]==null)
+		{
+			slot[index]=n;
+			size++;
+		}
+		else
+		{
+			NodeHashing<T> n1=slot[index];
+			NodeHashing<T> pre=n1;
+			while(n1!=null)
+			{
+				if(n1.data.compareTo(data)<0)
+					break;
+				pre=n1;
+				n1=n1.next;
+			}
+			if(n1==slot[index])
+			{
+				slot[index]=n;
+				n.next=pre;
+				size++;
+			}
+			
+			else {
+				pre.next=n;
+				n.next=n1;
+				size++;
+			}
+		}
+		
+	}
+	public boolean search(T data)
+	{
+		int index=hashFunction(data);
+		NodeHashing<T> n=slot[index];
+		if(n==null)
+			return false;
+		while(n!=null)
+		{
+			if(n.data.compareTo(data)==0)
+				return true;
+			n=n.next;
+		}
+			return false;
+	}
+	public void remove(T data)
+	{
+		int index=data.hashCode()%11;
+		NodeHashing<T> n=slot[index];
+		NodeHashing<T> pre=n;
+		while(n!=null)
+		{
+			if(n.data.compareTo(data)==0)
+				break;
+			pre=n;
+			n=n.next;
+			
+		}
+		if(n==slot[index])
+		{
+			slot[index]=slot[index].next;
+			n=null;
+			size--;
+		}
+		else
+		{
+			pre.next=n.next;
+			n=null;
+		}
+	}
+
+	public String toString()
+	{
+		String s="";
+		for(int i=0;i<11;i++)
+		{
+			s=s+i+" : ";
+			NodeHashing<T> n=slot[i];
+			if(n==null)
+			{
+				s=s+"none";
+			}
+			while(n!=null)
+			{
+				s=s+n.data+" ";
+				n=n.next;
+			}
+			s=s+"\n";
+		}
+		return s;
+	}
+}

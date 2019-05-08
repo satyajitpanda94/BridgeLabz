@@ -1,0 +1,7 @@
+package bridgeLabzDatastructure;
+
+public class PrimeNumbersAnagram {
+public static void main(String[] args) {
+	System.out.println(PrimeNumbers2D.capacity);
+}
+}
