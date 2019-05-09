@@ -1,0 +1,28 @@
+package functionalPrograms;
+
+import java.util.Scanner;
+
+public class HarmonicNumber {
+	public static void main(String[] args) {
+		System.out.println("Enter harmonic Value N :");
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		while(n==0)
+		{
+			System.out.println("N can't be Zero, So re-enter.");
+			n=sc.nextInt();
+		}
+		harmonicValue(n);
+		sc.close();
+	}
+
+	public static void harmonicValue(int n) {
+		double sum=0;
+		for(int i=1;i<=n;i++)
+		{
+			sum=sum+(1.0/i);
+		}
+		System.out.println("Harmonic Value is : "+sum);
+		
+	}
+}

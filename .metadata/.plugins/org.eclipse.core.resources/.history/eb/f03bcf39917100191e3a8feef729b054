@@ -1,0 +1,53 @@
+package functionalPrograms;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Gambler {
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter Stake :");
+		int stake;
+		while(true)
+		{
+			try {
+				stake = sc.nextInt();
+				System.out.println("Enter Goal :");
+				int goal=sc.nextInt();
+				while(goal<=stake)
+				{
+					System.out.println("Goal can't be lesser than or equal to stake, so re-enter.");
+					goal=sc.nextInt();
+				}
+				System.out.println("Enter Number Of Times You Want To Play :");
+				int n=sc.nextInt();
+				int win=0;
+				for(int i=1;i<=n;i++)
+				{
+					int stakeForBid=stake;
+					while(stakeForBid>0 && stakeForBid<goal)
+					{
+						if(Math.random()>0.5)
+							stakeForBid++;
+						else
+							stakeForBid--;
+					}
+					if(stakeForBid==goal)
+						win++;
+				}
+				double percentOfWin=(win*100.0)/n;
+				double percentOfLoss=100.0-percentOfWin;
+				System.out.println("%age of win : "+percentOfWin+" & no of wins : "+win);
+				System.out.println("%age of loss : "+percentOfLoss);
+				sc.close();
+				break;
+			} catch (InputMismatchException e) {
+				System.out.println("invalid Enter,Enter Integer type data :");
+//				clears buffer
+				sc.next();
+			}
+		}
+		
+		
+	}
+}
