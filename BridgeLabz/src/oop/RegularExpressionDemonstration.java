@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class RegularExpressionDemonstration {
 public static void main(String[] args) throws FileNotFoundException {
-	Scanner sca=new Scanner(new File("/home/admin1/Documents/Regex"));
+	Scanner sca=new Scanner(new File("/home/admin1/eclipse-workspace/BridgeLabz/src/oop/RegexTextFile"));
 	String massage="";
 	while(sca.hasNext())
 	    massage=massage+" "+sca.nextLine();

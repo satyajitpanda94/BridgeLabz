@@ -8,7 +8,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 public class JsonInventory {
 public static void main(String[] args) {
-	Inventory inv1 = JsonUnit.jsonToJava(new File("/home/admin1/Documents/JsonTextDoc.json"), Inventory.class);
+	Inventory inv1 = JsonUnit.jsonToJava(new File("/home/admin1/eclipse-workspace/BridgeLabz/src/oop/JsonFile.json"), Inventory.class);
 	System.out.println(JsonUnit.javaToJson(inv1));
 }
 }
