@@ -21,6 +21,7 @@ class JsonUnit {
 		try {
 			s = mapr.writeValueAsString(obj);
 		} catch (IOException e) {
+			System.out.println("Exception during Java to Json.");
 			e.printStackTrace();
 		}
 		return s;
@@ -31,7 +32,7 @@ class JsonUnit {
 		try {
 			result = mapr.readValue(file, class1);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			System.out.println("Exception during Json to Java.");
 			e.printStackTrace();
 		}
 		return result;
@@ -40,16 +41,16 @@ class JsonUnit {
 
 @JsonPropertyOrder(value = { "rice", "pulses", "wheats" })
 class Inventory {
-	InventoryName Rice[];
-	InventoryName Pulses[];
+	InventoryName rice[];
+	InventoryName pulses[];
 	InventoryName wheats[];
 
 	public InventoryName[] getPulses() {
-		return Pulses;
+		return pulses;
 	}
 
 	public void setPulses(InventoryName[] pulses) {
-		Pulses = pulses;
+		this.pulses = pulses;
 	}
 
 	public InventoryName[] getWheats() {
@@ -61,11 +62,11 @@ class Inventory {
 	}
 
 	public InventoryName[] getRice() {
-		return Rice;
+		return rice;
 	}
 
 	public void setRice(InventoryName[] rice) {
-		Rice = rice;
+		this.rice = rice;
 	}
 
 }
