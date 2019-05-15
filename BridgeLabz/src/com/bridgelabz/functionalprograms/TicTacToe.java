@@ -3,9 +3,8 @@ package com.bridgelabz.functionalprograms;
 * created by: Satyajit Panda
 * Date 10/04/2018
 *
-* Purpose: Write a Program to play a Cross Game or Tic­Tac­Toe Game. Player 1 is
-the Computer and the Player 2 is the user. Player 1 take Random Cell that is the
-Column and Row.
+* Purpose: Write a Stopwatch Program for measuring the time that elapses between
+the start and end clicks.
 **/
 
 import java.util.InputMismatchException;
