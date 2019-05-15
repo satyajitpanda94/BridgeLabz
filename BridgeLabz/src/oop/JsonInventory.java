@@ -1,19 +1,30 @@
 package oop;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
-import org.codehaus.jackson.annotate.JsonPropertyOrder;
+
 import org.codehaus.jackson.map.ObjectMapper;
 
 public class JsonInventory {
 public static void main(String[] args) {
-	Inventory inv1 = JsonUnit.jsonToJava(new File("/home/admin1/eclipse-workspace/BridgeLabz/src/oop/JsonFile.json"), Inventory.class);
-	System.out.println(JsonUnit.javaToJson(inv1));
+	InventoryDataMangament invenObj = JsonUtil.jsonToJava(new File("/home/admin1/eclipse-workspace/BridgeLabz/src/oop/JsonFile.json"), InventoryDataMangament.class);
+	System.out.println(JsonUtil.javaToJson(invenObj));
+//	try {
+//		FileWriter fw=new FileWriter(new File("/home/admin1/eclipse-workspace/BridgeLabz/src/oop/JsonFileOutput.json"));
+//		fw.write(JsonUtil.javaToJson(invenObj));
+//		fw.flush();
+//		fw.close();
+//	} catch (IOException e) {
+//		// TODO Auto-generated catch block
+//		e.printStackTrace();
+//	}
+	
 }
 }
 
-class JsonUnit {
+class JsonUtil {
 	private static ObjectMapper mapr = new ObjectMapper();
 
 	public static String javaToJson(Object obj) {
@@ -39,39 +50,20 @@ class JsonUnit {
 	}
 }
 
-@JsonPropertyOrder(value = { "rice", "pulses", "wheats" })
-class Inventory {
-	InventoryName rice[];
-	InventoryName pulses[];
-	InventoryName wheats[];
+class InventoryDataMangament {
+	Inventory inventory[];
 
-	public InventoryName[] getPulses() {
-		return pulses;
+	public Inventory[] getInventory() {
+		return inventory;
 	}
 
-	public void setPulses(InventoryName[] pulses) {
-		this.pulses = pulses;
+	public void setInventory(Inventory[] inventory) {
+		this.inventory = inventory;
 	}
-
-	public InventoryName[] getWheats() {
-		return wheats;
-	}
-
-	public void setWheats(InventoryName[] wheats) {
-		this.wheats = wheats;
-	}
-
-	public InventoryName[] getRice() {
-		return rice;
-	}
-
-	public void setRice(InventoryName[] rice) {
-		this.rice = rice;
-	}
-
+	
 }
 
-class InventoryName {
+class Inventory {
 	private String name;
 	private double weight;
 	private double pricePerKg;

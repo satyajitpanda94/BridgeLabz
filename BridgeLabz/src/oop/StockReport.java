@@ -5,9 +5,9 @@ import java.io.File;
 public class StockReport {
 	public static void main(String[] args) {
 
-		StockArray sa = JsonUnit.jsonToJava(
+		StockArray sa = JsonUtil.jsonToJava(
 				new File("/home/admin1/eclipse-workspace/BridgeLabz/src/oop/stockJsonFile.json"), StockArray.class);
-		System.out.println(JsonUnit.javaToJson(sa) + "\nTotal value of Stock : " + sa.calTotalValue());
+		System.out.println(JsonUtil.javaToJson(sa) + "\nTotal value of Stock : " + sa.calTotalValue());
 
 	}
 }

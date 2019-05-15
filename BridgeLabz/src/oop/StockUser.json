@@ -1,0 +1,14 @@
+{
+  "accountNumber": 45965289,
+  "accountBalance": 5000,
+  "shares": [
+    {
+      "stockName": "Google",
+      "numberOfShares": 16
+    },
+    {
+      "stockName": "TCS",
+      "numberOfShares": 24
+    }
+  ]
+}

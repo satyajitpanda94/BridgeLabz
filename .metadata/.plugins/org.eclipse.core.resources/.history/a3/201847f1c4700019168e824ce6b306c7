@@ -1,8 +1,0 @@
-package bridgeLabzDatastructure;
-
-public class demo {
-public static void main(String[] args) {
-	PrimeNumbers2D.createPrimeNumberInArray(0,1000);
-	System.out.println(PrimeNumbers2D.length);
-}
-}
