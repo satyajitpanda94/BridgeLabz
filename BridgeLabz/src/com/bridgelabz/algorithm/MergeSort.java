@@ -2,7 +2,7 @@ package com.bridgelabz.algorithm;
 
 /*
 * created by: Satyajit Panda
-* Date 10/04/2018
+* Date 30/04/2019
 *
 * Purpose: Write a program with Static Functions to do Merge Sort of list of
 Strings.

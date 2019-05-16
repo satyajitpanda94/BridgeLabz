@@ -1,12 +1,14 @@
 package com.bridgelabz.functionalprograms;
-import java.util.InputMismatchException;
+
 /*
 * created by: Satyajit Panda
-* Date 11/04/2018
+* Date 11/04/2019
 *
 * Purpose: Print the prime factors of number N.
 **/
 import java.util.Scanner;
+import java.util.InputMismatchException;
+
 
 public class PrimeFactors {
 	public static void main(String[] args) {

@@ -1,13 +1,13 @@
 package com.bridgelabz.functionalprograms;
 
-import java.util.InputMismatchException;
 /*
 * created by: Satyajit Panda
-* Date 11/04/2018
+* Date 11/04/2019
 *
 * Purpose: Print the Nth Harmonic Value.
 **/
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class HarmonicNumber {
 	public static void main(String[] args) {
@@ -17,7 +17,7 @@ public class HarmonicNumber {
 		while (true) {
 			try {
 				n = sc.nextInt();
-				while (n<1) {
+				while (n < 1) {
 					System.out.println("N can't be Zero or lesser, So re-enter.");
 					n = sc.nextInt();
 				}

@@ -1,7 +1,7 @@
 package com.bridgelabz.algorithm;
 /*
 * created by: Satyajit Panda
-* Date 10/04/2018
+* Date 29/04/2019
 *
 * Purpose: Write a Util Static Function to calculate monthlyPayment that reads in three
 command­line arguments P, Y, and R and calculates the monthly payments you
@@ -10,10 +10,10 @@ interest compounded monthly.
 **/
 
 public class MonthlyPayment {
-public static void main(String[] args) {
-	double principal=Double.parseDouble(args[0]);
-	int year=Integer.parseInt(args[1]);
-	double interest=Double.parseDouble(args[2]);
-	Util.monthlyPayment(principal,year,interest);
-}
+	public static void main(String[] args) {
+		double principal = Double.parseDouble(args[0]);
+		int year = Integer.parseInt(args[1]);
+		double interest = Double.parseDouble(args[2]);
+		Util.monthlyPayment(principal, year, interest);
+	}
 }

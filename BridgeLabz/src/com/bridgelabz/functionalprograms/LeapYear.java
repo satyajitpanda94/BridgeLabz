@@ -1,13 +1,14 @@
 package com.bridgelabz.functionalprograms;
 
-import java.util.InputMismatchException;
 /*
 * created by: Satyajit Panda
-* Date 10/04/2018
+* Date 10/04/2019
 *
 * Purpose: Print the year is a Leap Year or not and ensure year is a 4 digit number..
 **/
 import java.util.Scanner;
+import java.util.InputMismatchException;
+
 
 public class LeapYear {
 	public static void main(String[] args) {

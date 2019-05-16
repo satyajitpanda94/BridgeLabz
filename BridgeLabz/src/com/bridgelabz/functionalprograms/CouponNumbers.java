@@ -2,7 +2,7 @@ package com.bridgelabz.functionalprograms;
 
 /*
 * created by: Satyajit Panda
-* Date 10/04/2018
+* Date 24/04/2019
 *
 * Purpose: Given N distinct Coupon Numbers, how many random numbers do you
 need to generate distinct coupon number? This program simulates this random

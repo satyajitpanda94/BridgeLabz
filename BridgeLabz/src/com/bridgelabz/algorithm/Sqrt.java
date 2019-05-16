@@ -1,7 +1,7 @@
 package com.bridgelabz.algorithm;
 /*
 * created by: Satyajit Panda
-* Date 10/04/2018
+* Date 28/04/2019
 *
 * Purpose: Write a static function sqrt to compute the square root of a nonnegative number c
 given in the input using Newton's method.

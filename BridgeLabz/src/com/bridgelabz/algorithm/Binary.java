@@ -1,7 +1,7 @@
 package com.bridgelabz.algorithm;
 /*
 * created by: Satyajit Panda
-* Date 10/04/2018
+* Date 30/04/2019
 *
 * Purpose: Write Binary.java to read an integer as an Input, convert to Binary using toBinary
 function and perform the following functions.

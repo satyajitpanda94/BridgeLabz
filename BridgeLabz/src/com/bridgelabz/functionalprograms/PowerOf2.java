@@ -2,7 +2,7 @@ package com.bridgelabz.functionalprograms;
 
 /*
 * created by: Satyajit Panda
-* Date 10/04/2018
+* Date 10/04/2019
 *
 * Purpose: This program takes a command­line argument N and prints a table of the
 powers of 2 that are less than or equal to 2^N.

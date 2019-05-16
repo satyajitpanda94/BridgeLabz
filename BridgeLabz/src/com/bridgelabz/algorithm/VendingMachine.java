@@ -1,7 +1,8 @@
 package com.bridgelabz.algorithm;
+
 /*
 * created by: Satyajit Panda
-* Date 10/04/2018
+* Date 27/04/2018
 *
 * Purpose: There is 1, 2, 5, 10, 50, 100, 500 and 1000 Rs Notes which can be
 returned by Vending Machine. Write a Program to calculate the minimum number

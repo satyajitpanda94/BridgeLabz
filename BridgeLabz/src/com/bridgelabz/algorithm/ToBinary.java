@@ -1,7 +1,7 @@
 package com.bridgelabz.algorithm;
 /*
 * created by: Satyajit Panda
-* Date 10/04/2018
+* Date 30/04/2019
 *
 * Purpose: Write a static function toBinary that outputs the binary (base 2) representation of
 the decimal number typed as the input. It is based on decomposing the number into
@@ -20,7 +20,8 @@ public class ToBinary {
 				int num = sc.nextInt();
 				String binary = Util.toBinary(num);
 				binary = Util.binaryPadding(binary);
-				String binary1=binary.substring(0,8)+" "+binary.substring(8,16)+" "+binary.substring(16,24)+" "+binary.substring(24);
+				String binary1 = binary.substring(0, 8) + " " + binary.substring(8, 16) + " " + binary.substring(16, 24)
+						+ " " + binary.substring(24);
 				System.out.println(binary1);
 				sc.close();
 				break;

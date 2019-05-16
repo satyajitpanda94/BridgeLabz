@@ -2,7 +2,7 @@ package com.bridgelabz.functionalprograms;
 
 /*
 * created by: Satyajit Panda
-* Date 10/04/2018
+* Date 24/04/2019
 *
 * Purpose: Flip Coin and print percentage of Heads and Tails
 **/
@@ -21,7 +21,7 @@ public class FlipCoin {
 		while (true) {
 			try {
 				num = sc.nextInt();
-				
+
 //				if number is -ve, while block runs to re-enter number
 				while (num < 0) {
 					System.out.println("Number can't be -ve, so re-enter.");
