@@ -14,7 +14,7 @@ public class NumberOfBinarySearchTree {
 		Scanner sc = new Scanner(System.in);
 		while (true) {
 			try {
-				System.out.print("Enter Number of nodes of binary tree : ");
+				System.out.print("Enter Number of Nodes of binary tree : ");
 				int n = sc.nextInt();
 				while (n < 1) {
 					System.out.print("Invalid Enter, re-enter.");

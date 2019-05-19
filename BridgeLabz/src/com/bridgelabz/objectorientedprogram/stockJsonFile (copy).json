@@ -1,0 +1,28 @@
+
+	[	
+		{
+			"stockName": "TCS",
+			"numberOfShares": 25,
+			"sharePrice": 50 
+		},
+		
+		{
+			"stockName": "Wipro",
+			"numberOfShares": 30,
+			"sharePrice": 55
+		},
+		
+		{
+			"stockName": "Accenture",
+			"numberOfShares": 20,
+			"sharePrice": 45
+		},
+		
+		{
+			"stockName": "Infosys",
+			"numberOfShares": 35,
+			"sharePrice": 25
+		}
+		
+	]
+	
