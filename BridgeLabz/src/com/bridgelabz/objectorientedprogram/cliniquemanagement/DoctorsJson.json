@@ -1,0 +1,66 @@
+{
+"doctors":
+[ {
+  "name" : "Samir Rout",
+  "id" : "19",
+  "specialization" : "NUEROLOGIST",
+  "availability" : "AM"
+}, {
+  "name" : "Akhilesh Mishra",
+  "id" : "24",
+  "specialization" : "ORTHOLOGIST",
+  "availability" : "PM"
+}, {
+  "name" : "Sampark Pradhan",
+  "id" : "35",
+  "specialization" : "pyschologist",
+  "availability" : "AM"
+}, {
+  "name" : "PRATHIMA Senapati",
+  "id" : "41",
+  "specialization" : "CHILD SPECIALIST",
+  "availability" : "PM"
+}, {
+  "name" : "Malay Verma",
+  "id" : "575",
+  "specialization" : "CARDIOLOGIST",
+  "availability" : "PM"
+}, {
+  "name" : "Tapashi Sharma",
+  "id" : "75",
+  "specialization" : "PHYSICIAN",
+  "availability" : "AM"
+}, {
+  "name" : "Shuvam Bhattray",
+  "id" : "357",
+  "specialization" : "PHYSICIAN",
+  "availability" : "AM"
+}, {
+  "name" : "Kamal Dixit",
+  "id" : "139",
+  "specialization" : "PHYSICIAN",
+  "availability" : "Both"
+}, {
+  "name" : "Sanjay Mudgal",
+  "id" : "371",
+  "specialization" : "CARDIOLOGIST",
+  "availability" : "PM"
+}, {
+  "name" : "Twinkil Sharma",
+  "id" : "123",
+  "specialization" : "Gastroenterologist",
+  "availability" : "PM"
+}, {
+  "name" : "Saloni Tripathy",
+  "id" : "145",
+  "specialization" : "NUROLAGIST",
+  "availability" : "PM"
+}, {
+  "name" : "Dharma Reddy",
+  "id" : "127",
+  "specialization" : "Medicine Specialist",
+  "availability" : "AM"
+} ]
+
+}
+

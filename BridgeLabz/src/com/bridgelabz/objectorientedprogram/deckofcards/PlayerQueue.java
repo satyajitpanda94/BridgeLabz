@@ -26,6 +26,17 @@ private int hashFunction(String cardName)
 {
 	String stringArray[]=cardName.split(" ");
 	String firstWord=stringArray[0];
+	String lastWord=stringArray[2];
+	int hashcode1=0;
+	if(lastWord.equals("Clubs"))
+		hashcode1=0;
+	else if(lastWord.equals("Diamonds"))
+		hashcode1=1;
+	else if(lastWord.equals("Hearts"))
+		hashcode1=2;
+	else
+		hashcode1=3;
+	
 	int hashCode=0;
 	if(firstWord.equals("Jack"))
 		hashCode=11;
@@ -38,7 +49,7 @@ private int hashFunction(String cardName)
 	else
 	    hashCode=Integer.parseInt(firstWord);
 	
-	return hashCode;
+	return hashCode+hashcode1*13;
 }
 private void sortPlayerCards(String playerCards[])
 {
@@ -58,7 +69,6 @@ private void sortPlayerCards(String playerCards[])
 
 private void sortAndInsertToQueue()
 {
-//	Queue<String> playerCardsList2=new Queue<String>();
 	for(int index1=0;index1<numOfPlayers;index1++)
 	{
 		String playerCards[]=new String[numOfCards];
