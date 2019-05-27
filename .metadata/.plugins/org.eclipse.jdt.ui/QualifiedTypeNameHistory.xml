@@ -53,11 +53,11 @@
 <fullyQualifiedTypeName name="java.io.FileWriter"/>
 <fullyQualifiedTypeName name="org.codehaus.jackson.map.ObjectMapper"/>
 <fullyQualifiedTypeName name="com.bridgelabz.objectorientedprogram.JsonConversion"/>
-<fullyQualifiedTypeName name="com.bridgelabz.objectorientedprogram.addressbook.PersonAddresses"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.bridgelabz.objectorientedprogram.addressbook.Address"/>
-<fullyQualifiedTypeName name="com.bridgelabz.objectorientedprogram.addressbook.Person"/>
 <fullyQualifiedTypeName name="java.io.File"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="com.bridgelabz.objectorientedprogram.addressbook.AddressBookImpl"/>
+<fullyQualifiedTypeName name="com.bridgelabz.objectorientedprogram.addressbook.PersonAddresses"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.bridgelabz.objectorientedprogram.addressbook.Person"/>
 </qualifiedTypeNameHistroy>
