@@ -12,11 +12,12 @@ public static void main(String[] args) {
 	String fileName="/home/admin1/eclipse-workspace/BridgeLabz/src/com/bridgelabz/objectorientedprogram/commercialdataprocessing/CompanySharesJson.json";
 	try {
 		StockAccount stockAccount=JsonConversion.jsonToJava(new File(fileName), StockAccount.class);
+		System.out.println("Your shares are :");
+		stockAccount.yourStocks();
 		Scanner scanner=new Scanner(System.in);
-		System.out.println("Stock Symbols are : TCS,Wipro,Accenture,Infosys,Google,IBM.");
 		while(true)
 		{
-			System.out.print("Enter Stock Symbol : ");
+			System.out.print("Enter Stock Symbol to buy or sell : ");
 			String stockSymbol=scanner.nextLine();
 			System.out.print("Enter Number of shares to buy or sell (for sell enter -ve number) : ");
 			int amount=scanner.nextInt();
@@ -29,15 +30,16 @@ public static void main(String[] args) {
 			{
 				stockAccount.sell(amount, stockSymbol);
 			}
-            System.out.println("Do you Want to Buy More Shares, write yes/no.");
+			stockAccount.save(fileName);
+			stockAccount.printReport();
+			System.out.println("Total value of Stock Account is : "+stockAccount.valueOf());
+            System.out.println("Do you Want to Buy or Sell More Shares, write yes/no.");
             String yesOrNo=scanner.nextLine();
             if(yesOrNo.equals("no"))
             	break;
 		}	
-		stockAccount.save(fileName);
-		stockAccount.printReport();
-		System.out.println("Total value of Stock Account is : "+stockAccount.valueOf());
 		scanner.close();
+		
 	} catch(InputMismatchException inputmismatch)
 	{
 		System.out.println("You Entered Invalid Data Type, Please Enter Integer Value for Number of Shares.");

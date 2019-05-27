@@ -86,7 +86,7 @@ public class UnorderedList<T> {
 					"/home/admin1/eclipse-workspace/BridgeLabz/src/com/bridgelabz/datastructure/UnorderedLinkListOutputFile");
 			int l = length;
 			for (int i = 0; i < l; i++) {
-				fw.write(get(i) + " ");
+				fw.write(this.get(i) + " ");
 			}
 			System.out.println("List is added to file.");
 			fw.close();

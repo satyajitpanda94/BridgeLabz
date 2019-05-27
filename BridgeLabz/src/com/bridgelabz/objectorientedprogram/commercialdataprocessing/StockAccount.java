@@ -81,32 +81,52 @@ public class StockAccount {
 			e.printStackTrace();
 		}
 	}
+	public int numberOfShares(String stockSymbol)
+	{
+		int shares=0;
+		for(CompanyShares share:companyShares)
+		{
+			if(share.getStockSymbol().equalsIgnoreCase(stockSymbol))
+			{
+				shares=share.getNumberOfShares();
+				break;
+			}
+		}
+		return shares;
+	}
 	
 	public void sell(int amount, String symbol)
 	{
 		String fileName="/home/admin1/eclipse-workspace/BridgeLabz/src/com/bridgelabz/objectorientedprogram/commercialdataprocessing/Stocks.json";
 		StocksArr stock = JsonConversion.jsonToJava(new File(fileName), StocksArr.class);
-		this.accountBalance+=(stock.sharePrice(symbol) * amount);
-		
-		CompanyShares share=new CompanyShares();
-		share.setStockSymbol(symbol);
-		stockSymbol.push(symbol);
-		soldOrPurChased.push("sold");
-		share.setNumberOfShares(numOfstocksAfter(amount, symbol));
-		share.setPricePerShare(stock.sharePrice(symbol));
-		String date=""+new Date();
-		share.setDateTimeOfTransaction(date);
-		dateAndTime.enqueue(date);
-		linkList.add(share);
-		stock.numberOfShares(symbol, amount*-1);
-		try {
-			FileWriter fw=new FileWriter(fileName);
-			fw.write(JsonConversion.javaToJson(stock));
-			fw.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+//		System.out.println("\n...."+numberOfShares(symbol));
+		if((numberOfShares(symbol)+amount)>=0)
+		{
+			this.accountBalance+=(stock.sharePrice(symbol) * amount);
+			
+			CompanyShares share=new CompanyShares();
+			share.setStockSymbol(symbol);
+			stockSymbol.push(symbol);
+			soldOrPurChased.push("sold");
+			share.setNumberOfShares(numOfstocksAfter(amount, symbol));
+			share.setPricePerShare(stock.sharePrice(symbol));
+			String date=""+new Date();
+			share.setDateTimeOfTransaction(date);
+			dateAndTime.enqueue(date);
+			linkList.add(share);
+			stock.numberOfShares(symbol, amount*-1);
+			try {
+				FileWriter fw=new FileWriter(fileName);
+				fw.write(JsonConversion.javaToJson(stock));
+				fw.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
+		else
+			System.out.println("You don't have sufficient amount of shares.");
+		
 	}
 
 
@@ -173,5 +193,11 @@ public class StockAccount {
 			System.out.println(stockSymbol1.pop()+" is "+soldOrPurChased1.pop()+" on "+dateAndTime.dequeue());
 		}
 		
+	}
+	public void yourStocks()
+	{
+		for (CompanyShares companyShare:companyShares) {
+			System.out.println(companyShare.getStockSymbol()+" : "+companyShare.getNumberOfShares());
+		}
 	}
 }

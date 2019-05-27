@@ -53,6 +53,8 @@ class StocksArr {
 		}
 		return sharePrice;
 	}
+	
+
 	public void numberOfShares(String stockSymbol,int amount)
 	{
 		for(Stock stock:stocks)
