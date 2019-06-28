@@ -1,0 +1,181 @@
+*{
+   margin: 0;
+   padding: 0;
+   font-family: Arial, Helvetica, sans-serif;
+}
+header{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(hintersee.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+ul{
+    float: right;
+    list-style-type: none;
+    margin-top: 20px;
+}
+ul li{
+    display: inline-block;
+}
+ul li.active a{
+    background-color: rgb(183, 240, 78);
+    color: #000;
+}
+ul li a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 5px 20px;
+    border: 1px solid #fff;
+    transition: 0.6s ease;
+}
+ul li a:hover{
+    background-color: rgb(240, 233, 171);
+    color: #000;
+}
+.tabs{
+    max-width: 1200px;
+    margin: auto;
+}
+.title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.title h1{
+    color: #fff;
+    font-size: 40px;
+    padding: 5px 20px;
+    border: 1px solid #fff;
+}
+
+.main-containt{
+    max-width: 400px;
+    border-radius: 20px;
+    margin: auto;
+    background: rgba(0,0,0,0.5);
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    padding: 40px;
+    border: 1px solid rgb(248, 255, 151);
+}
+.main-containt h1{
+    text-align: center;
+    font-size: 40px;
+    border-bottom: 3px solid rgb(209, 212, 33);
+    margin-bottom: 0;
+    padding: 8px 0;
+}
+.main-containt h2{
+    text-align: center;
+    font-size: 10px;
+    color:rgb(255,0,0);   
+    font-weight: bold;
+}
+
+.text-box1{
+    width: 100%;
+    overflow: hidden;
+    font-size: 15px;
+    padding: 2px 0;
+    margin: 2px 0;
+}
+.text-box1 input{
+    border: none;
+    outline: none;
+    background: rgba(0,0,0,0.1);
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 5px;
+    float: left;
+    margin: 5px;
+    border-bottom: 1px dotted #fff;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.text-box2{
+    width: 100%;
+    overflow: hidden;
+    font-size: 15px;
+    padding: 2px 0;
+    margin: 2px 0;
+}
+.text-box2 input{
+    border: none;
+    outline: none;
+    background: rgba(0,0,0,0.1);
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 5px;
+    float: left;
+    margin: 5px;
+    border-bottom: 1px dotted #fff;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.text-box{
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 4px 0;
+    margin: 4px 0;
+}
+.text-box input{
+    border: none;
+    outline: none;
+    background: rgba(0,0,0,0.1);
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 5px;
+    float: left;
+    margin: 5px;
+    border-bottom: 1px dotted #fff;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.btn{
+    border: none;
+    outline: none;
+    background: rgb(183, 240, 78);
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 0;
+    margin-top: 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+.btn:hover{
+    background: rgba(251, 255, 17, 0.8);
+}
+
+.forgot-btn{
+    text-align: center;
+    text-decoration: none;
+    border-bottom: none;
+    margin-bottom: 0;
+    padding: 0;
+}
+.forgot-btn a{
+    text-decoration: none;
+    color: rgb(255, 252, 45);
+    font-size: 15px;
+}
+.forgot-btn a:hover{
+    color: rgb(161, 159, 5);
+}
+.logout{
+	float: right;
+}

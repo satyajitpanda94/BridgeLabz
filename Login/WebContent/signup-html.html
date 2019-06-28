@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EMAIL Resistration Page</title>
+<link rel="stylesheet" type="text/css" href="universal-css.css">
+<script>
+	var request;
+	function sendInfo() {
+		var email = document.signup.mail.value;
+		var url = "emailFinder.jsp?email=" + email;
+
+		if (window.XMLHttpRequest) {
+			request = new XMLHttpRequest();
+		} else if (window.ActiveXObject) {
+			request = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		try {
+			request.onreadystatechange = getInfo;
+			request.open("GET", url, true);
+			request.send();
+		} catch (e) {
+			alert("Unable to connect to server");
+		}
+	}
+
+	function getInfo() {
+		if (request.readyState == 4) {
+			var val = request.responseText;
+			document.getElementById('mylocation1').innerHTML = val;
+
+		}
+	}
+</script>
+</head>
+<body>
+	<header>
+		<div class="tabs">
+
+			<ul>
+				<li><a href="home-html.html">Home</a></li>
+				<li class="active"><a href="signup-html.html">Signup</a></li>
+				<li><a href="login-html.html">Login</a></li>
+				<li><a href="forgot-password-html.html">Forgot Password</a></li>
+			</ul>
+		</div>
+		<div class="main-containt">
+			<h1>Singup</h1>
+			<form action="Signup" method="get" name="signup">
+				<div class="text-box1">
+					<input type="text" placeholder="Your Name" name="name">
+					<input type="text" onblur="sendInfo()" placeholder="Your Email" name="mail">
+				</div>
+				<h2 id="mylocation1"></h2>
+            <div class="text-box2">
+					<input type="text" placeholder="Mobile Number" name="mobile">
+					<input type="password" placeholder="Password" name="password">
+					<input type="password" placeholder="Conform Password" name="conpassword">
+				</div>
+				
+		<input class="btn" type="submit" value="Submit">
+		</form>
+		</div>
+	</header>
+</body>
+</html>
