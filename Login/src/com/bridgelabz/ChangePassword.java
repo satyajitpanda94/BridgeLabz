@@ -22,7 +22,7 @@ public class ChangePassword extends HttpServlet {
 		String password=request.getParameter("password");
 		String conpassword=request.getParameter("conpassword");
 		PersonDaoWithJdbc personDaoWithJdbc=new PersonDaoWithJdbc();
-		if(conpassword.equals(password))
+		if(conpassword.equals(password)&& !password.isEmpty())
 	    {
 			personDaoWithJdbc.doChangePassword(mail,password);
 			response.sendRedirect("PasswordChanged.jsp");

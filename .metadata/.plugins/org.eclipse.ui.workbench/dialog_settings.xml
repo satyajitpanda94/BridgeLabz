@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item value="251" key="DIALOG_X_ORIGIN"/>
+		<item value="0" key="DIALOG_Y_ORIGIN"/>
+	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item key="dialogHeight" value="667"/>
-		<item key="dialogWidth" value="783"/>
+		<item value="661" key="dialogHeight"/>
+		<item value="777" key="dialogWidth"/>
+		<list key="textEntries">
+		</list>
 		<list key="orderedElements">
 		</list>
 		<list key="orderedProviders">
-		</list>
-		<list key="textEntries">
 		</list>
 		<list key="textArray">
 		</list>
 	</section>
 	<section name="NewWizardAction">
-		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
+		<item value="org.eclipse.wst.html.ui.internal.wizard.NewHTMLWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="org.eclipse.ui.Basic"/>
-			<item value="org.eclipse.emf.ecore.Wizard.category.ID"/>
-			<item value="org.eclipse.buildship.ui.creationwizards"/>
-			<item value="org.eclipse.jdt.ui.java"/>
-			<item value="org.eclipse.m2e"/>
-			<item value="org.eclipse.oomph"/>
-			<item value="org.eclipse.ui.Examples"/>
+			<item value="org.eclipse.wst.web.ui"/>
 		</list>
 	</section>
-	<section name="WorkbenchPreferenceDialogSettings">
-		<item key="DIALOG_X_ORIGIN" value="251"/>
-		<item key="DIALOG_Y_ORIGIN" value="0"/>
+	<section name="ImportExportAction">
 	</section>
 </section>
